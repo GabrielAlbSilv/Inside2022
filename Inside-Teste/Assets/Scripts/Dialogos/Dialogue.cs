@@ -10,7 +10,6 @@ public class Dialogue : MonoBehaviour
     public float radious; //variável que define o tamanho do collider
     private DialogControl dc;
     bool onradius;
-    int esc;
 
     private void Start()
     {
@@ -23,17 +22,13 @@ public class Dialogue : MonoBehaviour
         Interact();
     }
 
-    /*caso o jogador pressione espaço e esteja na área de colisão,
-    a janela de diálogo vai abrir*/
-
-
-    private int count = 0; //varíavel para proteger a exibição do texto
     
     private void Update()
     {
         Texto();
     }
 
+    private int count = 0; //varíavel para proteger a exibição do texto
     void Texto()
     {
         if (count < 1)
@@ -42,10 +37,6 @@ public class Dialogue : MonoBehaviour
             {
                 dc.Speech(speechTxt);
                 count++;
-            }
-            if (esc == 2)
-            {
-                obj.dialgueObj.SetActive(false);
             }
         }
     }
